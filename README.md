@@ -47,7 +47,7 @@ Install it:
 
 `$ make && make install`
 
-It will log to `/var/log/keystroke.log`. This may require root access, but you can change that if you want. Set where you want it to log:
+It will log to `~/keystroke.log`. Set where you want it to log:
 
 `$ keylogger ~/logfile.txt`
 
@@ -87,7 +87,7 @@ and there are several options that can be set with environment variables:
 
 To run it just type `keylogger` and it'll run:
 ```
-keylogger --log-file keylogger.log 
+keylogger --log-file keylogger.log
 RECORD extension version 1.13
 ```
 

