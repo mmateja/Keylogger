@@ -14,10 +14,10 @@ install:
 
 uninstall:
 	rm $(INSTALLDIR)/$(EXECUTABLE)
-	rm /Library/LaunchDaemons/$(PLIST)
+	rm /Library/LaunchAgents/$(PLIST)
 
 startup:
-	cp $(PLIST) /Library/LaunchDaemons
+	cp $(PLIST) /Library/LaunchAgents
 
 clean:
 	rm $(EXECUTABLE)
